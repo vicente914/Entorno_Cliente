@@ -55,7 +55,7 @@ let array2D = [[1,2,3], [4,5,6], [7,8,9]];
 let arrayPlano = array2D.flat();
 
 
-
+/*
 let nombres = ['Vicente', 'Mateo', 'Alvaro', 'Dylan', 'Vicente'];
 
 let contadorVicente = 0;
@@ -64,10 +64,38 @@ nombres.forEach((x) => {
         contadorVicente += 1;
     }
 });
+*/
 
-
+/*
 const personas = [
   { nombre: "Ana", edad: 23 },
   { nombre: "Luis", edad: 30 }
 ];
+
+const edades = personas.map(persona => persona.edad);
+const nombres = personas.map(persona => persona.nombre);
+*/
 // Resultado esperado: ["Ana", "Luis"]
+const nombres = ['Vicente', 'Gabriel'];
+const edades = [18, 28];
+
+const personas = nombres.map((nombre, i) => ({nombre, edad: edades[i]}));
+
+
+const usuarios = [
+  { nombre: "Ana", edad: 25 },
+  { nombre: "Luis", edad: 30 },
+  { nombre: "Marta", edad: 20 }
+];
+let ordenarUsuarios  = usuarios.sort((a, b) => a.edad - b.edad);
+
+
+const numeros2 = [2, 1, 2, 3, 4, 4, 5];
+
+let ordenados = numeros2.sort((a, b) => a - b);
+let unicosOrdenados = [...new Set(ordenados)];
+
+
+const numeros3 = [1, 2, 3, 4, 5];
+
+const sumCuadradosPares = numeros3.filter(x => x % 2 === 0).map(x => x**2).reduce((acum, i) => acum + i, 0);
