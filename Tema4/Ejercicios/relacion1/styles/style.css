@@ -1,0 +1,158 @@
+body{
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.juego{
+   border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 1rem;
+    width: 280px;          /* ancho fijo razonable */
+    min-height: 250px;     /* altura mínima para que quepa el contenido */
+    background-color: #fafafa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/*COLORES*/
+#colores{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    
+}
+
+.color{
+    padding: 20px;
+}
+
+#rojo{
+    background-color: red;
+
+    border: none;
+    border-radius: 10px;
+    width: 25%;
+    height: 25%;
+}
+
+#verde{
+    background-color: green;
+    border: none;
+    border-radius: 10px;
+    width: 25%;
+    height: 25%;
+}
+
+#azul{
+    background-color: blue;
+    border: none;
+    border-radius: 10px;
+    width: 25%;
+    height: 25%;
+}
+
+#amarillo{
+    background-color: yellow;
+    border: none;
+    border-radius: 10px;
+    width: 25%;
+    height: 25%;
+}
+
+/*BOTON CAMBIANTE*/
+#btn{
+    background-color: aqua;
+    padding: 20px 15px;
+
+    border-radius: 10px;
+}
+
+
+/*SIGUE LA INSTRUCCION*/
+#circulo{
+    background-color: grey;
+    padding: 40px;
+
+    border-radius: 40px;
+}
+
+
+/*NUMERO CORRECTO*/
+#numeros{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 columnas iguales */
+    gap: 8px;
+    width: 100%;
+    max-width: 240px;  
+}
+
+.numero{
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+
+
+/*SIMON DICE*/
+#simonColores{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.simonColor{
+    padding: 30px;
+    border-radius: 10px;
+}
+    
+#simonRojo{
+    background-color: red;
+}
+
+#simonVerde{
+    background-color: green;
+}
+
+#simonAzul{
+    background-color: blue;
+}
+
+#simonAmarillo{
+    background-color: rgb(247, 247, 7);
+}
+
+/*CARRERA BOTONES*/
+#btnCorrer{
+    font-size: 25px;
+    padding: 20px 30px;
+
+    border-radius: 20px;
+}
+
+#contenedorProgreso{
+    background-color: grey;
+    padding: 2px;
+    margin-top: 50px;
+    width: 80%;
+    height: 10px;
+
+    border-radius: 20px;
+}
+
+#barraProgreso{
+    background-color: green;
+    width: 0%;
+    height: 100%;
+
+    border-radius: 20px;
+}

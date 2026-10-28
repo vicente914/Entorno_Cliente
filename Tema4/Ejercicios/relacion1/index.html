@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <div id="cazaColor" class="juego">
+        <h2>Caza del color</h2>
+        <div id = "colores">
+            <div id="rojo" class="color"></div>
+            <div id="verde" class="color"></div>
+            <div id="azul" class="color"></div>
+            <div id="amarillo" class="color"></div>
+        </div>
+
+        <h3 id="buscar">Haz click en el color: </h3>
+    </div>
+
+    <div id="cambiaBtn" class="juego">
+        <h2>Boton cambiante</h2>
+        <button id="btn">Soy un boton</button>
+
+    </div>
+
+
+    <div id="sigueInstruccion" class = "juego">
+        <h2>Seguir la instruccion</h2>
+        <h3>Presiona la tecla A</h3>
+        <h3 id="presionoTecla"></h3>
+    </div>
+
+    <div id="reflejos" class="juego">
+        <h2>Juego de reflejos</h2>
+        <div id="circulo"></div>
+        <h3 id="respuestaReflejos"></h3>
+    </div>
+
+    <div id="numeroCorrecto" class="juego">
+        <h2>Atrapa el numero correcto</h2>
+        <div id="numeros">
+            <button id="primero" class="numero">1</button>
+            <button id="segundo" class="numero">2</button>
+            <button id="tercero" class="numero">3</button>
+            <button id="cuarto" class="numero">4</button>
+            <button id="quinto" class="numero">5</button>
+            <button id="sexto" class="numero">6</button>
+            <button id="septimo" class="numero">7</button>
+            <button id="octavo" class="numero">8</button>
+            <button id="noveno" class="numero">9</button>
+        </div>
+        <h3 id="marcarRespuesta"></h3>
+    </div>
+
+
+    <div id="simonDice" class="juego">
+        <h2>Simon dice (versión simple)</h2>
+        <div id="simonColores">
+            <div id="simonRojo" class="simonColor"></div>
+            <div id="simonVerde" class="simonColor"></div>
+            <div id="simonAzul" class="simonColor"></div>
+            <div id="simonAmarillo" class="simonColor"></div>
+        </div>
+        <h3 id="nivelSimon"></h3>
+    </div>
+
+
+    <div id="carreaBtn" class="juego">
+        <h2>Carrera de botones</h2>
+        <button id="btnCorrer">Correr</button>
+        <div id="contenedorProgreso">
+            <div id="barraProgreso"></div>
+        </div>
+        <h3 id="mensajeMeta"></h3>
+    </div>
+</body>
+</html>
