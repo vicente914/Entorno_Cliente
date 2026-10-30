@@ -26,12 +26,19 @@ casillas.forEach((casilla, i) => {
         // Pintamos la X o la O dependiendo del turno
         casilla.innerHTML = turno;
         comprobarGanador();
-        
 
-        // Si el juego no ha terminado, cambiamos de turno
-        if (!juegoTerminado) {
+        if (juegoTerminado) {
+            //Uso setTimeout para que el mensaje de victoria se pueda ver
+            setTimeout(() => {
+                reiniciarJuego();
+                ganador.innerHTML = ""; // Limpiamos el mensaje de victoria
+            }, 1500);
+        } 
+        else {
+            // Si el juego sigue, cambiamos el turno
             turno = turno === "X" ? "O" : "X";
         }
+
     });
 });
 
@@ -62,8 +69,6 @@ function comprobarGanador() {
         juegoTerminado = true;
       
         ganador.innerHTML = "Hay empate"
-        reiniciarJuego();
-      
     }
 }
 
