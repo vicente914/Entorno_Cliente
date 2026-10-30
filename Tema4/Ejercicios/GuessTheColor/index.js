@@ -29,10 +29,17 @@ function generateColors(cantidad){
     for(let i = 0; i < cantidad; i++){
         const square = document.createElement("div");
         square.classList.add("color");
-        square.style.backgroundColor = randomRGBColors();
+        
+        let currentColor= randomRGBColors();
+        square.style.backgroundColor = currentColor;
+        colorsList.push(currentColor);
 
+
+        square.addEventListener("click", ()=>{
+            checkGuess(currentColor);
+        });
         colorsContainer.appendChild(square);
-        colorsList[i] = square.style.backgroundColor;
+        
 
     }
 }
@@ -41,12 +48,23 @@ function setGoal(){
     let goalColor = colorsList[Math.floor(Math.random() * colorsList.length)];
     goal.innerHTML = " "+goalColor;
 }
+
+function checkGuess(colorAdivinado) {
+    if (colorAdivinado === goal.textContent.trim()) {
+        goal.style.color = "#4caf50"; 
+        goal.textContent = "¡CORRECTO!"; 
+    }
+}
+
 easyMode.addEventListener("click", ()=> {
     generateColors(4);
     setGoal();
+    
 });
 
 hardMode.addEventListener("click", ()=> {
     generateColors(6);
     setGoal();
 });
+
+
