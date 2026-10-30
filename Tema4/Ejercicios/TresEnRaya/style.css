@@ -1,0 +1,46 @@
+/* RESET BÁSICO Y FONDO DE LA PÁGINA */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #d1d9d9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centra el tablero vertical y horizontalmente */
+}
+
+/* EL TABLERO */
+#tablero {
+
+    margin-top: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 150px); /* 3 columnas de 150px */
+    grid-template-rows: repeat(3, 150px);    /* 3 filas de 150px */
+    gap: 2px; 
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden; /* Para que las esquinas de las casillas no se salgan del borde */
+}
+
+/* CADA CASILLA */
+.casilla {
+    background-color: #4a80b4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    color: white;
+    cursor: pointer;
+    user-select: none; /* Evita que el usuario seleccione el texto al hacer doble clic */
+}
+
+/* (Opcional) Efecto al pasar el ratón por encima */
+.casilla:hover {
+    background-color: #4173a3; 
+}
