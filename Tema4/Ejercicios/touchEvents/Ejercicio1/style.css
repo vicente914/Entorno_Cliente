@@ -1,16 +1,20 @@
-#caja{
-    background-color: violet;
-    padding: 50px;
-    width: 5%;
-    position: absolute;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#caja2{
-    background-color: aquamarine;
-    padding: 50px;
-    width: 5%;
-    position: absolute;
 
-    top: 50px;
-    left: 150px;
+body{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+
+}
+
+#contenedorSensible{
+    height: 200px;
+    background-color: violet;
+    width: 200px;
 }

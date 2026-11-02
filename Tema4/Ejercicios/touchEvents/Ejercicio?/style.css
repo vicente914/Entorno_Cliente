@@ -1,0 +1,16 @@
+#caja{
+    background-color: violet;
+    padding: 50px;
+    width: 5%;
+    position: absolute;
+}
+
+#caja2{
+    background-color: aquamarine;
+    padding: 50px;
+    width: 5%;
+    position: absolute;
+
+    top: 50px;
+    left: 150px;
+}

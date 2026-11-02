@@ -1,50 +1,27 @@
-let caja = document.getElementById("caja");
-var offsetX, offsetY;
+//Contenedor sensible
+const contenedorSensible = document.getElementById("contenedorSensible");
 
-caja.addEventListener("touchstart", (e)=>{
-    e.preventDefault();
-    console.log("tocamos el div");
-    caja.style.backgroundColor = "red";
 
-    offsetX = e.touches[0].clientX - caja.offsetLeft;
-    offsetY = e.touches[0].clientY - caja.offsetTop;
-});
+contenedorSensible.addEventListener("touchstart", (e) =>{
+    contenedorSensible.style.backgroundColor = "green";
 
-caja.addEventListener("touchend", (e)=>{
-    e.preventDefault();
-    console.log("levantas el dedo del div");
-    caja.style.backgroundColor = "violet";
-});
-
-window.addEventListener("touchmove", (e)=>{
+    //muestra las coordenadas
     let toque = e.touches[0];
-    let x = toque.clientX;
-    let y = toque.clientY;
-    console.log(`X = ${x} Y = ${y}`);
+    contenedorSensible.innerHTML = `<p>X:${toque.pageX}</p> <p>Y:${toque.pageY}</p>`;
 });
 
-caja.addEventListener("touchmove", (e) =>{
+contenedorSensible.addEventListener("touchmove", (e)=>{
+    contenedorSensible.style.backgroundColor = "yellow";
+
+    //actualiza las coordenadas segun movemos el cursor
     let toque = e.touches[0];
-    let x = toque.clientX;
-    let y = toque.clientY;
+    contenedorSensible.innerHTML = `<p>X:${toque.pageX}</p> <p>Y:${toque.pageY}</p>`;
+});
 
-    
-    caja.style.left = `${x-offsetX}px`;
-    caja.style.top = `${y-offsetY}px`;
+contenedorSensible.addEventListener("touchend", ()=>{
+    contenedorSensible.style.backgroundColor = "red";
 });
 
 
 
-//DETECTAR GESTOS
-const caja2 = getElementById("caja2");
-let startX = 0;
-let startY = 0;
 
-caja2.addEventListener("touchstart" , (e) =>{
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-});
-
-caja2.addEventListener("touchend", (e)=>{
-    let endX = e.changedTouches[0]
-});
