@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightsteelblue;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa toda la pantalla como mínimo */
+    font-family: sans-serif; /* Una fuente por defecto para que se vea limpio */
+}
+
+header {
+    background-color: rgb(43, 48, 54);
+    color: aliceblue;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    /* Quitamos el height fijo y usamos flex para que ocupe el espacio sobrante */
+    flex: 1; 
+    width: 100%;
+    padding: 40px 20px;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; /* Alinea los elementos arriba, no en el centro */
+    gap: 40px; /* Separación entre el formulario y la lista */
+}
+
+/* --- FORMULARIO --- */
+#formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    padding: 30px;
+    width: 35%; /* Ancho fijo para el formulario */
+    
+    background-color: aliceblue;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra suave */
+    
+    /* NO ponemos height, dejamos que el contenido dicte su altura */
+}
+
+/*Maquetacion de */
+#formulario p {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#formulario label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: rgb(43, 48, 54);
+}
+
+#formulario input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+#formulario input:focus {
+    border-color: rgb(105, 156, 223);
+}
+
+#anadirLibro {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+
+    background-color: rgb(105, 156, 223);
+    color: white;
+    transition: background-color 0.2s;
+}
+
+#anadirLibro:hover {
+    background-color: rgb(25, 109, 219);
+}
+
+
+/* --- LISTA DE LIBROS --- */
+#listaLibros {
+    display: flex;
+    flex-direction: column;
+    
+    padding: 30px;
+    width: 55%; /* Un poco más ancho que el formulario */
+    
+    background-color: aliceblue;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    /* NO ponemos height fijo. Si añades libros, este div crecerá hacia abajo */
+}
+
+#listaLibros h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(43, 48, 54);
+}
+
+#libros {
+    /* Aquí es donde el JS va a meter los libros */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Separación entre cada libro */
+}
+
+/* Estilo que puedes usar desde JS para cada librito */
+.libro-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid rgb(105, 156, 223);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+footer {
+    background-color: rgb(43, 48, 54);
+    color: aliceblue;
+    width: 100%;
+    padding: 20px;
+    text-align: center; /* Centra el copyright */
+}
