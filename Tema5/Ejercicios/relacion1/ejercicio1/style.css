@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#stopWatch{
+    background-color: orange;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 35px;
+
+    color: rgb(255, 249, 238);
+}
+
+#botones{
+    display: flex;
+    gap: 20px;
+}
+
+.boton{
+    background-color: orange;
+    color: rgb(255, 249, 238);
+
+    padding: 25px 80px;
+    font-size: 25px;
+
+    border: 2px solid rgb(255, 249, 238);
+    border-radius: 15px;
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+
+h2, h3, #timer{
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+h2{
+    font-size: 50px;
+}
+
+h3{
+    font-size: 40px;
+}
