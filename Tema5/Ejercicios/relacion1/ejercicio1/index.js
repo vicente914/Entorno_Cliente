@@ -47,9 +47,21 @@ function stopWatch(){
 }
 
 //Resetear el timer
-function resetWatch(){}
+function resetWatch(){
+    //Si ya habia iniciado un interval, lo quitamos
+    if(intervalId !== null){
+        clearInterval(intervalId);
+        intervalId = null;
+    }
+    acumulado = 0;
+    inicio = null;
+    minutos = 0;
+    segundos = 0;
+    tempInicial.innerHTML = `${String(minutos).padStart(2, "0")}:${String(segundos).padStart(2, "0")}`;
+
+}
 
 //Comienza a avanzar el timer una vez le hacemos click al boton start
 start.addEventListener("click", startWatch);
-
 stop.addEventListener("click", stopWatch);
+reset.addEventListener("click", resetWatch);
