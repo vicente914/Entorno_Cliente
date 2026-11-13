@@ -15,11 +15,17 @@ lives.textContent += ` ${livesCount} lives`;
 //We make an array with each letter of the alphabet
 const alphabetLetters = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
+//for the guess to word, here we save the spaces
+const wordSlots = [];
 
 
 //We create the spaces needed for the random word to guess
 for(let i = 0; i < randWord.length; i++){
-    theWord.textContent += "_ "
+    const span = document.createElement("span");
+    span.textContent = "_ ";
+    span.classList.add("letter-slot");
+    theWord.appendChild(span);
+    wordSlots.push(span);
 }
 
 
@@ -30,16 +36,23 @@ alphabetLetters.forEach(letter =>{
     button.textContent = letter;
     button.classList.add("key");
 
-
+    //Each time we click on a letter
     button.addEventListener("click", ()=>{
-        console.log(`letra ${letter} usada`);
-        for(letter of randWord){
-            if(button.textContent = letter){
-                
+
+        if(randWord.includes(letter)){
+
+            console.log(`la letra ${letter} SI esta en la palabra`);
+            //We check each letter of the word to guess
+            for(let i = 0; i < randWord.length; i++){
+                if(randWord[i] === letter){
+                    wordSlots[i].textContent = letter;
+                }
             }
+                
         }
     });
 
     alphabet.appendChild(button);
 });
 
+//console.log(randWord);
