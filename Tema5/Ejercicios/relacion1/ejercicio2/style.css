@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#gameContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    align-items: center;
+    height: 100vh;
+    
+
+    background-color: yellowgreen;
+    color: rgb(249, 255, 238);
+    
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#alphabet{
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/*style for the buttons created with js*/
+.key{
+    background-color: rgb(249, 255, 238);
+    color: yellowgreen;
+
+    padding: 20px 15px;
+
+    border: none;
+    border-radius: 10px;
+}
+
+.key:hover{
+    background-color: rgb(227, 230, 224);
+
+    cursor: pointer;
+    transform: translateY(-1px);
+}
+
+.key:active{
+    transform: translateY(5px);
+}
+
+.used{
+    background-color: rgb(190, 194, 183);
+    color: rgb(105, 141, 33);
+}
+
+#chosenCategory{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#theWord{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.letter-slot{
+    font-size: 30px;
+}
+
+
+#restart{
+    padding: 15px 30px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: rgb(249, 255, 238);
+    color: yellowgreen;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#restart:hover{
+    cursor: pointer;
+    transform: translateY(-1px);
+    background-color: rgb(227, 230, 224);
+}
+
+#restart:active{
+    transform: translateY(5px);
+}
