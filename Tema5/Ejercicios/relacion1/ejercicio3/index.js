@@ -2,11 +2,12 @@
 const indications = document.getElementById("indications");
 const timeLimit = document.getElementById("timeLimit");
 const pairsContainer = document.getElementById("pairsContainer");
+const cards = document.querySelectorAll(".card");
 
 /*-----------   CONFIGURATION   --------------*/
 const pairs = ["1", "2", "3", "4", "5"];
 const time_limit = 120;
-const missMatch_Delay = 800; // ms que se muestran dos cartas distintas antes de volver a taparse
+const missMatch_Delay = 800; // ms two cars that are not a pair are shown before being flipped again
 
 
 //------------ STATUS ------------------------
@@ -67,7 +68,6 @@ function flipCard(card){
 
 function unflipCard(card){
     card.classList.remove("flipped");
-    card.textContent = "";
 }
 
 function handleCardClick(card){
@@ -103,7 +103,7 @@ function checkMatch(cardA, cardB){
         firstCard = null;
         matchedPairs++;
 
-        if (matchedPairs === parejas.length) {
+        if (matchedPairs === pairs.length) {
             endGame(true);
         }
 
@@ -145,11 +145,14 @@ function resetGame(){
 
     cards.forEach((card, i) => {
         card.textContent = deck[i];
-        card.textContent = "";
         card.classList.remove("flipped", "matched");
     });
 }
 
 
+/* --------------------------   START   ------------------------------------- */
+//the clicks link once
+cards.forEach(card => card.addEventListener("click", () => handleCardClick(card)));
 
+resetGame();
 

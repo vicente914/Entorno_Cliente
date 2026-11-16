@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(109, 199, 230);
+}
+
+#gameContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    height: 100vh;
+
+    margin-top: 40px;
+}
+
+#timeLimit{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#pairsContainer{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    /* 5 cartas de 90px + 4 huecos de 15px = 510px -> 5 por fila */
+    width: 510px;
+}
+
+/* ---------- CARTA (boca abajo) ---------- */
+.card{
+    /* Tamaño fijo: así no cambia cuando aparece el número */
+    width: 90px;
+    height: 130px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgb(235, 245, 248);
+    border-radius: 5px;
+    background-color: rgb(235, 245, 248);
+
+    font-size: 32px;
+    font-weight: bold;
+    color: transparent;      /* el número existe, pero no se ve */
+
+    transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.card:hover{
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+/* ---------- FLIPPED CARD ---------- */
+.card.flipped{
+    background-color: white;
+    color: rgb(20, 40, 60); 
+}
+
+/* ---------- PAIRED CARD ---------- */
+.card.matched{
+    background-color: rgb(160, 225, 180);
+    border-color: rgb(160, 225, 180);
+}
+
+
+.card.flipped:hover{
+    cursor: default;
+    transform: none;
+}
