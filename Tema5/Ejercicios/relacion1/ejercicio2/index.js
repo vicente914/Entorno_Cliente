@@ -7,7 +7,11 @@ const restartGame = document.getElementById("restart");
 let gameActive = true;
 
 //Possible words to guess
-const words = ["dog", "building", "bomb", "soccer", "basketball", "banana", "orange", "taekwondo"];
+const words = ["paris", "tokyo", "cairo", "lima", "rome", "oslo", "kyiv", "seoul",
+    "madrid", "london", "berlin", "sydney", "moscow", "havana", "athens", "dublin",
+    "toronto", "chicago", "beijing", "jakarta", "nairobi", "bangkok",
+    "amsterdam", "barcelona", "singapore", "bucharest", "copenhagen"];
+    
 let randIndexWord = Math.floor(Math.random()*words.length);
 let randWord = words[randIndexWord];
 
