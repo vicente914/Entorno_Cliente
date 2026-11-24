@@ -1,0 +1,234 @@
+/* =========================================
+   1. RESET Y VARIABLES (Nueva Temática)
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Fondo general: Un gris muy oscuro con un toque sutil de azul/morado */
+    --bg-color: #0d0f17; 
+    
+    /* Fondo de las tarjetas: Un tono un poco más claro para que resalten */
+    --card-bg: #161923; 
+    
+    /* Textos */
+    --text-main: #f0f2f5; 
+    --text-muted: #8b92a5; 
+    
+    /* Colores de acento (Azul claro y Morado) */
+    --accent-blue: #5eead4; /* Un azul claro/cian vibrante */
+    --accent-purple: #8b5cf6; /* Un morado profundo */
+    
+    /* Degradado pasional pero tranquilo */
+    --gradient-accent: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    
+    --border-radius: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================
+   2. CABECERA Y BUSCADOR
+   ========================================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    /* Fondo semitransparente con desenfoque (Glassmorphism) */
+    background: rgba(13, 15, 23, 0.75); 
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15); /* Borde morado sutil */
+}
+
+.header-contenido {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    
+    /* Hacemos que el título tenga el degradado */
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+    /* Un pequeño brillo extra al título */
+    filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.4));
+}
+
+.buscador-grupo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 600px;
+}
+
+#inputBuscar {
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 15px;
+    color: var(--text-main);
+    background-color: var(--card-bg);
+    border: 2px solid transparent;
+    border-radius: 50px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#inputBuscar::placeholder {
+    color: var(--text-muted);
+}
+
+#inputBuscar:focus {
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15), 0 4px 12px rgba(0, 0, 0, 0.3);
+    background-color: #1a1e2b;
+}
+
+#btnBuscar {
+    padding: 12px 26px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--gradient-accent);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+#btnBuscar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(94, 234, 212, 0.4); /* Brillo azul al pasar el ratón */
+    filter: brightness(1.1);
+}
+
+#btnBuscar:active {
+    transform: scale(0.96);
+}
+
+/* =========================================
+   3. CONTENEDOR DE PELÍCULAS
+   ========================================= */
+#contenedorPeliculas {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+#contenedorPeliculas > p {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 18px;
+    color: var(--text-muted);
+    padding: 50px 0;
+}
+
+/* =========================================
+   4. TARJETA DE PELÍCULA
+   ========================================= */
+.pelicula {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(139, 92, 246, 0.1); /* Borde morado sutil inicial */
+    position: relative;
+}
+
+/* Efecto hover: se eleva y proyecta una sombra con matiz morado/azul */
+.pelicula:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.2), 0 0 15px rgba(94, 234, 212, 0.1);
+    border-color: rgba(139, 92, 246, 0.4);
+}
+
+.pelicula img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    background-color: #1a1e2b;
+    border-bottom: 2px solid transparent;
+    border-image: var(--gradient-accent) 1; /* Línea degradada debajo de la imagen */
+}
+
+/* =========================================
+   5. TEXTOS DENTRO DE LA TARJETA
+   ========================================= */
+.pelicula p {
+    padding: 0 16px;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+/* El Título (primer párrafo) */
+.pelicula p:first-of-type {
+    color: var(--text-main);
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 16px;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+/* Al pasar el ratón, el título de la tarjeta se ilumina */
+.pelicula:hover p:first-of-type {
+    color: var(--accent-blue);
+}
+
+.pelicula p:last-of-type {
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+/* =========================================
+   6. RESPONSIVE (Móviles)
+   ========================================= */
+@media (max-width: 768px) {
+    .header-contenido {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .buscador-grupo {
+        max-width: 100%;
+    }
+}
